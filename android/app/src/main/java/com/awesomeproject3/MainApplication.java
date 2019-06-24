@@ -11,6 +11,8 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
 import java.util.List;
+import com.clevertap.android.sdk.ActivityLifecycleCallback;
+import com.clevertap.android.sdk.CleverTapAPI;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -41,6 +43,7 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
+    ActivityLifecycleCallback.register(this);
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
   }
